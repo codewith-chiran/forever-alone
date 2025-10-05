@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Alone but Happy | Premium Cinematic Intro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00E5FF;
+            --secondary-color: #ff6b6b;
+            --accent-color: #9d4edd;
+            --dark-bg: #0a0a14;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Premium Reflective Background */
+        .luxury-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, 
+                    rgba(0, 229, 255, 0.25) 0%, 
+                    transparent 40%),
+                radial-gradient(circle at 80% 20%, 
+                    rgba(255, 107, 107, 0.2) 0%, 
+                    transparent 40%),
+                radial-gradient(circle at 40% 40%, 
+                    rgba(157, 78, 221, 0.15) 0%, 
+                    transparent 50%),
+                radial-gradient(circle at 60% 60%, 
+                    rgba(255, 215, 0, 0.1) 0%, 
+                    transparent 45%),
+                linear-gradient(135deg, 
+                    #0a0a14 0%, 
+                    #1a1a2e 25%, 
+                    #16213e 50%, 
+                    #0f3460 75%, 
+                    #1a1a2e 100%);
+            z-index: -3;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Animated Grid Pattern */
+        .grid-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            opacity: 0.3;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .particle:nth-child(2n) {
+            background: rgba(255, 107, 107, 0.8);
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        .particle:nth-child(3n) {
+            background: rgba(157, 78, 221, 0.8);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            10% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            90% { 
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Glowing Orbs */
+        .glowing-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: orbFloat 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 229, 255, 0.3);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 107, 107, 0.2);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: rgba(157, 78, 221, 0.25);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -30px) scale(1.1);
+            }
+            50% {
+                transform: translate(-30px, 40px) scale(0.9);
+            }
+            75% {
+                transform: translate(40px, 20px) scale(1.05);
+            }
+        }
+
+        /* Main Square Container */
+        .cinematic-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px;
+        }
+
+        /* Enhanced Glass Panel with Reflection */
+        .glass-panel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                rgba(255, 255, 255, 0.02) 100%
+            );
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+                0 0 50px rgba(0, 229, 255, 0.1);
+            z-index: 1;
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+        }
+
+        /* Logo */
+        .logo-container {
+            position: absolute;
+            top: 35px;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .logo-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(0, 229, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+        }
+
+        /* Text Sequence */
+        .text-sequence {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            margin-top: 80px;
+        }
+
+        .text-line {
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            width: 100%;
+            line-height: 1.2;
+            text-shadow: 
+                0 0 20px rgba(0, 229, 255, 0.5),
+                0 0 40px rgba(0, 229, 255, 0.3);
+        }
+
+        .text-line.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Images Container */
+        .images-container {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            z-index: 2;
+        }
+
+        .image-item {
+            width: 140px;
+            height: 140px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 10px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(0, 229, 255, 0.2);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease;
+            position: relative;
+        }
+
+        .image-item.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .floating-heart {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.4rem;
+            animation: floatHeart 2s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.8));
+            z-index: 3;
+        }
+
+        @keyframes floatHeart {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-8px) scale(1.2); }
+        }
+
+        /* Final Message */
+        .final-message {
+            text-align: center;
+            z-index: 2;
+            margin-top: 15px;
+        }
+
+        .final-message h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            text-shadow: 
+                0 0 20px rgba(0, 229, 255, 0.7),
+                0 0 40px rgba(0, 229, 255, 0.4);
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 
+                    0 0 20px rgba(0, 229, 255, 0.7),
+                    0 0 40px rgba(0, 229, 255, 0.4);
+            }
+            to {
+                text-shadow: 
+                    0 0 30px rgba(0, 229, 255, 0.9),
+                    0 0 60px rgba(0, 229, 255, 0.6),
+                    0 0 80px rgba(0, 229, 255, 0.4);
+            }
+        }
+
+        .final-message p {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Controls */
+        .controls {
+            margin-top: 20px;
+            z-index: 10;
+        }
+
+        .control-btn {
+            background: linear-gradient(
+                135deg,
+                rgba(0, 229, 255, 0.2) 0%,
+                rgba(0, 229, 255, 0.1) 100%
+            );
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 
+                0 6px 20px rgba(0, 229, 255, 0.2),
+                0 0 15px rgba(0, 229, 255, 0.1);
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(0, 229, 255, 0.3) 0%,
+                rgba(0, 229, 255, 0.2) 100%
+            );
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 25px rgba(0, 229, 255, 0.3),
+                0 0 20px rgba(0, 229, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+<!-- Premium Background -->
+<div class="luxury-bg"></div>
+<div class="grid-pattern"></div>
+<div class="glowing-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+<div class="particles" id="particles"></div>
+
+<!-- Main Container -->
+<div class="cinematic-container">
+    <div class="glass-panel"></div>
+    
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="https://github.com/codewith-chiran/forever-alone/blob/main/codewithchiran-logo.png?raw=true" alt="CodeWithChiran" class="logo-img">
+        <div class="logo-text">CodeWithChiran</div>
+    </div>
+
+    <!-- Text Sequence -->
+    <div class="text-sequence">
+        <div class="text-line" id="line1">Some have lovers...</div>
+        <div class="text-line" id="line2">Some have besties...</div>
+        <div class="text-line" id="line3">Me? I have my peace ✨</div>
+    </div>
+
+    <!-- Images Display -->
+    <div class="images-container">
+        <div class="image-item" id="image1">
+            <div class="floating-heart">💖</div>
+            <img src="https://github.com/codewith-chiran/forever-alone/blob/main/will-wifi-signal-affect-health-1024x1024.jpg?raw=true" alt="WiFi Life">
+        </div>
+        <div class="image-item" id="image2">
+            <div class="floating-heart">💖</div>
+            <img src="https://github.com/codewith-chiran/forever-alone/blob/main/victor%20-laptop-stockcake.jpg?raw=true" alt="Laptop Life">
+        </div>
+        <div class="image-item" id="image3">
+            <div class="floating-heart">💖</div>
+            <img src="https://github.com/codewith-chiran/forever-alone/blob/main/bed.webp?raw=true" alt="Comfort Life">
+        </div>
+    </div>
+
+    <!-- Final Message -->
+    <div class="final-message">
+        <h2>Forever Alone, But Happy</h2>
+        <p>Finding joy in solitude and inner peace</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" id="replayBtn">
+            <i class="fas fa-redo"></i> Replay Animation
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create enhanced floating particles
+        createParticles();
+        
+        // Start animation sequence
+        startAnimation();
+        
+        // Set up replay button
+        document.getElementById('replayBtn').addEventListener('click', function() {
+            resetAnimation();
+            setTimeout(startAnimation, 300);
+        });
+    });
+
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 40;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            const left = Math.random() * 100;
+            const delay = Math.random() * 15;
+            const duration = 10 + Math.random() * 10;
+            const size = 2 + Math.random() * 4;
+            
+            particle.style.left = left + 'vw';
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.animationDelay = delay + 's';
+            particle.style.animationDuration = duration + 's';
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    function startAnimation() {
+        // Text sequence
+        setTimeout(() => {
+            document.getElementById('line1').classList.add('active');
+        }, 300);
+        
+        setTimeout(() => {
+            document.getElementById('line1').classList.remove('active');
+            document.getElementById('line2').classList.add('active');
+        }, 1800);
+        
+        setTimeout(() => {
+            document.getElementById('line2').classList.remove('active');
+            document.getElementById('line3').classList.add('active');
+        }, 3300);
+        
+        // Images appear one by one
+        setTimeout(() => {
+            document.getElementById('image1').classList.add('active');
+        }, 4300);
+        
+        setTimeout(() => {
+            document.getElementById('image2').classList.add('active');
+        }, 4800);
+        
+        setTimeout(() => {
+            document.getElementById('image3').classList.add('active');
+        }, 5300);
+    }
+
+    function resetAnimation() {
+        // Reset text lines
+        const textLines = document.querySelectorAll('.text-line');
+        textLines.forEach(line => {
+            line.classList.remove('active');
+        });
+        
+        // Reset images
+        const images = document.querySelectorAll('.image-item');
+        images.forEach(image => {
+            image.classList.remove('active');
+        });
+    }
+</script>
+</body>
+</html>
